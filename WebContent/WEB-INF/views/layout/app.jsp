@@ -12,6 +12,12 @@
         <div id="wrapper">
             <div id="header">
                 <h1>日報管理システム</h1>
+                 <c:if test="${sessionScope.login_employee != null}">
+                    <div id="employee_name">
+                        <c:out value="${sessionScope.login_employee.name}" />&nbsp;さん&nbsp;&nbsp;&nbsp;
+                        <a href="<c:url value='/logout' />">ログアウト</a>
+                    </div>
+                </c:if>
             </div>
             <div id="content">
                 ${param.content}
